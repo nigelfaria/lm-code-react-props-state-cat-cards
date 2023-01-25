@@ -3,6 +3,7 @@ import Navbar from './components/navbar';
 import Header from './components/header';
 import Footer from './components/footer';
 import Cat from './data/cat';
+import CatCard from './components/cat_card';
 import { useState } from 'react';
 
 function App(): JSX.Element {
