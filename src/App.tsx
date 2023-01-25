@@ -83,14 +83,15 @@ function App(): JSX.Element {
 				 birthYear: 2021,
 			 }
 	 ]);
-	 console.log(cats);
 	return (
 		<>
 			<Navbar />
 			<Header />
 
 			<main>
-				<div className='cards__wrapper'><CatCard/></div>
+				<div className='cards__wrapper'>
+					{cats.map(cat => <CatCard/>)}
+				</div>
 			</main>
 
 			<Footer />
