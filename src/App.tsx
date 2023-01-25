@@ -23,6 +23,12 @@ function App(): JSX.Element {
 			birthYear: 2016,
 		},
 		{
+			name: "Captain Catface",
+			species: "Sea Cattain",
+			favFoods: ["fish, rum"],
+			birthYear: 2016,
+		  },
+		{
 			name: 'Dopey',
 			species: 'Cat',
 			favFoods: ['bugs'],
@@ -83,17 +89,19 @@ function App(): JSX.Element {
 			birthYear: 2021,
 		}
 	]);
+	const catCount = cats.length;
 	return (
 		<>
 			<Navbar />
-			<Header />
+			<Header catCount={catCount} />
 
 			<main>
 				<div className='cards__wrapper'>
-					{cats.map(cat => <CatCard name={cat.name}
+					{cats.map((cat, index) => <CatCard name={cat.name}
 						species={cat.species}
 						favFoods={cat.favFoods}
 						birthYear={cat.birthYear}
+						catIndex={index}
 					/>)}
 				</div>
 			</main>
