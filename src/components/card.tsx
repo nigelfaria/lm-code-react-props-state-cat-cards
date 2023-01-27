@@ -117,16 +117,18 @@ interface CatCardProps {
     species: string,
     favFoods: string[],
     birthYear: number,
-    catIndex: number,
+    catIndex?: number,
 }
 
-const CatCard: React.FC<CatCardProps> = ({ name, species, favFoods, birthYear, catIndex }) => {
-
+const Card: React.FC<CatCardProps> = ({ name, species, favFoods, birthYear, catIndex }) => {
+    if (catIndex === undefined){
+        catIndex = 999;
+    }
     return (
         <div className='card'>
             <h3 className='card__text card__header'>{name}</h3>
             <p className='card__text'>Species: {species}</p>
-            <p className='card__text'>Favourite Food(s): {favFoods}</p>
+            <p className='card__text'>Favourite Food(s): {favFoods.join(", ")}</p>
             <p className='card__text'>Birth Year: {birthYear}</p>
 
             {catIndex < images.length && (
@@ -144,4 +146,4 @@ const CatCard: React.FC<CatCardProps> = ({ name, species, favFoods, birthYear, c
     );
 };
 
-export default CatCard;
+export default Card;
