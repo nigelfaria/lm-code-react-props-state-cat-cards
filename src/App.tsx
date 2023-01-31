@@ -8,6 +8,7 @@ import { useState } from 'react';
 import catData from './data/cat-data';
 import Dog from './data/dog';
 import dogData from './data/dog-data';
+import NewCatDogForm from './components/form';
 
 function App(): JSX.Element {
 
@@ -16,12 +17,35 @@ function App(): JSX.Element {
 
 	const [cats, setCats] = useState<Array<Cat>>(catData);
 	const catCount = cats.length;
+
+	const addCat = (name:string, species:string, favFoods:string[], birthYear:number ) =>{
+		setCats(previousCats => {
+			previousCats.push({name, species, favFoods, birthYear });
+			return previousCats;
+		})
+	};
+
+	const addDog = (name:string, species:string, favFoods:string[], birthYear:number ) =>{
+		setDogs(previousDogs => {
+			previousDogs.push({name, species, favFoods, birthYear });
+			return previousDogs;
+		})
+	};
+
+
 	return (
 		<>
 			<Navbar />
 			<Header catCount={catCount} dogCount = {dogCount} />
 
 			<main>
+				<hr></hr>
+				<hr></hr>
+				<div className='forms_wrapper'>
+					<NewCatDogForm  />
+				</div>
+				<hr></hr>
+				<hr></hr>
 				<div className='cards__wrapper'>
 					{cats.map((cat, index) => <Card
 						key = {cat.id}

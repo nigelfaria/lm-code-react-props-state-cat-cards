@@ -41,6 +41,15 @@ body {
 	margin-top: 0.25em;
 }
 
+.forms__wrapper {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	max-width: 62.5em;
+	min-width: 70vw;
+	min-height: 45vh;
+}
+
 .cards__wrapper {
 	display: flex;
 	justify-content: space-evenly;
@@ -49,6 +58,27 @@ body {
 	min-width: 70vw;
 	min-height: 45vh;
 }
+
+.newcatdogform {
+	padding: 1.5em;
+	border: 6px solid var(--red);
+	max-width: 35.625em;
+	min-width: 11.25em;
+	border-radius: 7px;
+	background: var(--yellow);
+	margin-bottom: 1em;
+	box-shadow: 0 4px 8px 0 rgb(13, 59, 102, 0.4);
+	transition: 0.3s;
+	margin: 0.5em;
+}
+
+.newcatdogform__text {
+	color: var(--navy);
+	font-family: 'SleepyCat';
+	font-size: 1.7rem;
+	margin: 0.2em;
+}
+
 
 .card {
 	padding: 1.5em;

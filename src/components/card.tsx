@@ -112,7 +112,7 @@ const images = [
         attributionUrl: 'https://www.flickr.com/people/x-oph/'
     }
 ];
-interface CatCardProps {
+export interface CardProps {
     name: string,
     species: string,
     favFoods: string[],
@@ -120,7 +120,7 @@ interface CatCardProps {
     catIndex?: number,
 }
 
-const Card: React.FC<CatCardProps> = ({ name, species, favFoods, birthYear, catIndex }) => {
+const Card: React.FC<CardProps> = ({ name, species, favFoods, birthYear, catIndex }) => {
     if (catIndex === undefined){
         catIndex = 999;
     }
