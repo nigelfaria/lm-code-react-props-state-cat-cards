@@ -121,9 +121,6 @@ export interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ name, species, favFoods, birthYear, catIndex }) => {
-    if (catIndex === undefined){
-        catIndex = 999;
-    }
     return (
         <div className='card'>
             <h3 className='card__text card__header'>{name}</h3>
@@ -131,7 +128,7 @@ const Card: React.FC<CardProps> = ({ name, species, favFoods, birthYear, catInde
             <p className='card__text'>Favourite Food(s): {favFoods.join(", ")}</p>
             <p className='card__text'>Birth Year: {birthYear}</p>
 
-            {catIndex < images.length && (
+            {catIndex !== undefined && catIndex < images.length && (
                 <CatImage
                     image={images[catIndex].image}
                     altText={images[catIndex].altText}
