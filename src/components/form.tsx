@@ -1,6 +1,6 @@
 import { useState } from "react";
-import catData from "../data/cat-data";
-import dogData from "../data/dog-data";
+import {catData, dogData} from "../data/pet-data";
+
 
 const NewCatDogForm: React.FC = (addCat, addDog) => {
     const [name, setName] = useState("Enter a Name");
